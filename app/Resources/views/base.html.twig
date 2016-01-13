@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        
+        
+                            <link rel="stylesheet" href="/Proyecto_F/web/bundles/sonataadmin/vendor/bootstrap/dist/css/bootstrap.min.css">
+                            <link rel="stylesheet" href="/Proyecto_F/web/bundles/sonataadmin/vendor/AdminLTE/css/font-awesome.min.css">
+                            <link rel="stylesheet" href="/Proyecto_F/web/bundles/sonataadmin/vendor/AdminLTE/css/ionicons.min.css">
+                            <link rel="stylesheet" href="/Proyecto_F/web/bundles/sonataadmin/vendor/AdminLTE/css/AdminLTE.css">
+                            <link rel="stylesheet" href="/Proyecto_F/web/bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+                            <link rel="stylesheet" href="/Proyecto_F/web/bundles/sonataadmin/vendor/jqueryui/themes/base/jquery-ui.css">
+                            <link rel="stylesheet" href="/Proyecto_F/web/bundles/sonataadmin/vendor/select2/select2.css">
+                            <link rel="stylesheet" href="/Proyecto_F/web/bundles/sonataadmin/vendor/select2/select2-bootstrap.css">
+                            <link rel="stylesheet" href="/Proyecto_F/web/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css">
+                            <link rel="stylesheet" href="/Proyecto_F/web/bundles/sonataadmin/css/styles.css">
+                            <link rel="stylesheet" href="/Proyecto_F/web/bundles/sonataadmin/css/layout.css">
+            
+                            <script src="/Proyecto_F/web/bundles/sonataadmin/vendor/jquery/dist/jquery.min.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonataadmin/vendor/jquery.scrollTo/jquery.scrollTo.min.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonatacore/vendor/moment/min/moment.min.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonataadmin/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonataadmin/vendor/jqueryui/ui/minified/jquery-ui.min.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonataadmin/vendor/jqueryui/ui/minified/i18n/jquery-ui-i18n.min.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonataadmin/jquery/jquery.form.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonataadmin/jquery/jquery.confirmExit.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonataadmin/vendor/select2/select2.min.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonataadmin/App.js"></script>
+                            <script src="/Proyecto_F/web/bundles/sonataadmin/Admin.js"></script>
+            
+                                                        
+                       <script src="/Proyecto_F/web/bundles/sonataadmin/vendor/select2/select2_locale_es.js"></script>
+                            
+              <style type="text/css">
+                body {
+                  padding-top: 60px;
+                  padding-bottom: 40px;
+                }
+                 </style>
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %} 
+            <link href="{{asset('web/bundles/sonatacore/bootstrap/dist/css/bootstrap.css') }}" type="text/css" rel="stylesheet" > 
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="container">
+                  <div class="jumbotron">
+                    <h1>Bienvenido</h1>
+                  </div>
+                
+            <div class="row">
+                <div class="span12">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+            
+            <footer>
+                <p>&copy Company {{ '' | date('Y') }}</p>
+            </footer>
+        </div>     
+        
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

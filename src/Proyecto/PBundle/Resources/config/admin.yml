@@ -1,0 +1,12 @@
+# Acme/DemoBundle/Resources/config/admin.yml
+services:
+    sonata.admin.post:
+        class: Proyecto\PBundle\Admin\PersonaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Peronas", label: "Personas" }
+        arguments:
+            - ~
+            -  Proyecto\PBundle\Entity\Persona
+            - ~
+        calls:
+            - [ setTranslationDomain, [ProyectoPBundle]]

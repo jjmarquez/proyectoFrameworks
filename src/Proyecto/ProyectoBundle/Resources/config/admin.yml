@@ -1,0 +1,12 @@
+# Acme/DemoBundle/Resources/config/admin.yml
+services:
+    sonata.admin.post:
+        class: Proyecto\ProyectoBundle\Admin\HabitacionAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Habitaciones", label: "Habitaciones" }
+        arguments:
+            - ~
+            -  Proyecto\ProyectoBundle\Entity\Habitacion
+            - ~
+        calls:
+            - [ setTranslationDomain, [ProyectoProyectoBundle]]

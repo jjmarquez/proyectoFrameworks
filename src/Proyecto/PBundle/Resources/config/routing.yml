@@ -1,7 +1,0 @@
-proyecto_p_persona:
-    resource: "@ProyectoPBundle/Resources/config/routing/persona.yml"
-    prefix:   /persona
-
-proyecto_p_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: ProyectoPBundle:Default:index }

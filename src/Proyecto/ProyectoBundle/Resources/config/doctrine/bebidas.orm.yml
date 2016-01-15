@@ -1,0 +1,24 @@
+Proyecto\ProyectoBundle\Entity\bebidas:
+    type: entity
+    table: null
+    repositoryClass: Proyecto\ProyectoBundle\Entity\bebidasRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        numero:
+            type: integer
+        cerveza:
+            type: integer
+        vino:
+            type: integer
+        agua:
+            type: integer
+        refrescos:
+            type: integer
+        alcoholicas:
+            type: integer
+    lifecycleCallbacks: {  }

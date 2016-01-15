@@ -1,0 +1,29 @@
+Proyecto\ProyectoBundle\Entity\Habitacion:
+    type: entity
+    table: null
+    repositoryClass: Proyecto\ProyectoBundle\Entity\HabitacionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        numero:
+            type: integer
+        contNac:
+            type: integer
+            column: cont_nac
+        contInter:
+            type: integer
+            column: cont_inter
+        tipo:
+            type: string
+            length: '10'
+        categoria:
+            type: string
+            length: '8'
+        camaInd:
+            type: binary
+            column: cama_ind
+    lifecycleCallbacks: {  }

@@ -1,0 +1,20 @@
+Proyecto\ProyectoBundle\Entity\Configurables_precios:
+    type: entity
+    table: null
+    repositoryClass: Proyecto\ProyectoBundle\Entity\Configurables_preciosRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        valor:
+            type: float
+        tipo:
+            type: string
+            length: '30'
+        nombre:
+            type: string
+            length: '30'
+    lifecycleCallbacks: {  }

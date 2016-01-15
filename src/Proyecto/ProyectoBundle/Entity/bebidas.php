@@ -2,56 +2,60 @@
 
 namespace Proyecto\ProyectoBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * bebidas
+ *
+ * @ORM\Table(name="bebidas", indexes={@ORM\Index(name="numero", columns={"numero"})})
+ * @ORM\Entity
  */
 class bebidas
 {
     /**
      * @var integer
-     */
-    private $id;
-
-    /**
-     * @var integer
-     */
-    private $numero;
-
-    /**
-     * @var integer
+     *
+     * @ORM\Column(name="cerveza", type="integer", nullable=false)
      */
     private $cerveza;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="vino", type="integer", nullable=false)
      */
     private $vino;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="agua", type="integer", nullable=false)
      */
     private $agua;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="refrescos", type="integer", nullable=false)
      */
     private $refrescos;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="alcoholicas", type="integer", nullable=false)
      */
     private $alcoholicas;
 
-
     /**
-     * Get id
+     * @var \Habitacion
      *
-     * @return integer
+     * @ORM\ManyToOne(targetEntity="Habitacion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="numero", referencedColumnName="numero")
+     * })
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $numero;
 
     /**
      * Set numero
@@ -196,4 +200,7 @@ class bebidas
     {
         return $this->alcoholicas;
     }
+    
+
 }
+

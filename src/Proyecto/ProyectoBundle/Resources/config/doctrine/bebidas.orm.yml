@@ -3,14 +3,10 @@ Proyecto\ProyectoBundle\Entity\bebidas:
     table: null
     repositoryClass: Proyecto\ProyectoBundle\Entity\bebidasRepository
     id:
-        id:
-            type: integer
-            id: true
-            generator:
-                strategy: AUTO
-    fields:
         numero:
             type: integer
+            id: true
+    fields:
         cerveza:
             type: integer
         vino:

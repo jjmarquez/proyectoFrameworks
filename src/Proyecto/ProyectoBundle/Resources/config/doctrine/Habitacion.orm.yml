@@ -3,14 +3,10 @@ Proyecto\ProyectoBundle\Entity\Habitacion:
     table: null
     repositoryClass: Proyecto\ProyectoBundle\Entity\HabitacionRepository
     id:
-        id:
-            type: integer
-            id: true
-            generator:
-                strategy: AUTO
-    fields:
         numero:
             type: integer
+            id: true
+    fields:
         contNac:
             type: integer
             column: cont_nac
@@ -24,6 +20,6 @@ Proyecto\ProyectoBundle\Entity\Habitacion:
             type: string
             length: '8'
         camaInd:
-            type: binary
-            column: cama_ind
+            type: string
+            length: '2'
     lifecycleCallbacks: {  }

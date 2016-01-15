@@ -1,12 +1,34 @@
 # Acme/DemoBundle/Resources/config/admin.yml
 services:
-    sonata.admin.post:
+    sonata.admin.habitacion:
         class: Proyecto\ProyectoBundle\Admin\HabitacionAdmin
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Habitaciones", label: "Habitaciones" }
         arguments:
             - ~
             -  Proyecto\ProyectoBundle\Entity\Habitacion
+            - ~
+        calls:
+            - [ setTranslationDomain, [ProyectoProyectoBundle]]
+            
+    sonata.admin.precios:        
+        class: Proyecto\ProyectoBundle\Admin\PreciosAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Precios Configurables", label: "Precios Configurables" }
+        arguments:
+            - ~
+            -  Proyecto\ProyectoBundle\Entity\Configurables_precios
+            - ~
+        calls:
+            - [ setTranslationDomain, [ProyectoProyectoBundle]]
+            
+    sonata.admin.bebidas:        
+        class: Proyecto\ProyectoBundle\Admin\BebidasAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Cantidad de bebidas", label: "Bebidas" }
+        arguments:
+            - ~
+            -  Proyecto\ProyectoBundle\Entity\bebidas
             - ~
         calls:
             - [ setTranslationDomain, [ProyectoProyectoBundle]]

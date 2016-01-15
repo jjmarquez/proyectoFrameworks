@@ -1,0 +1,3 @@
+proyecto_proyecto_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ProyectoProyectoBundle:Default:index }

@@ -18,6 +18,9 @@ class BebidasAdmin extends Admin
             ->add("cerveza")
             ->add("vino")
             ->add("agua")
+            ->add("refrescos")
+            ->add("alcoholicas")
+            
         ;
     }
 
@@ -26,8 +29,11 @@ class BebidasAdmin extends Admin
     {
         $datagridMapper
             ->add('numero')
-            ->add('categoria')
-            ->add('tipo')
+            ->add("cerveza")
+            ->add("vino")
+            ->add("agua")
+            ->add("refrescos")
+            ->add("alcoholicas")
         ;
     }
 
@@ -39,6 +45,8 @@ class BebidasAdmin extends Admin
             ->add("cerveza")
             ->add("vino")
             ->add("agua")
+            ->add("refrescos")
+            ->add("alcoholicas")
         ;
     }
 }

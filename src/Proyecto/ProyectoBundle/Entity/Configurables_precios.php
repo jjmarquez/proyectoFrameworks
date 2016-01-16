@@ -97,6 +97,12 @@ class Configurables_precios
      */
     public function getNombre()
     {
-        return $this->nombre;
+        return $this->nombre ;
     }
+    
+        public function __toString() {
+       if($this->tipo == 'Bebidas'){
+            return $this->nombre ;
+        }
+        }
 }

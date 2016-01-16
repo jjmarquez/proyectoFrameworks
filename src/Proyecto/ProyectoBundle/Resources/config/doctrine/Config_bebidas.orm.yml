@@ -3,15 +3,11 @@ Proyecto\ProyectoBundle\Entity\Config_bebidas:
     table: null
     repositoryClass: Proyecto\ProyectoBundle\Entity\Config_bebidasRepository
     id:
-        id:
-            type: integer
-            id: true
-            generator:
-                strategy: AUTO
-    fields:
         categoria:
             type: string
             length: '8'
+            id: true
+    fields:
         cervezaNombre:
             type: string
             length: '30'
@@ -23,5 +19,5 @@ Proyecto\ProyectoBundle\Entity\Config_bebidas:
         alcoholicasNombre:
             type: string
             length: '30'
-            column: alcoholicas_nmbre
+            column: alcoholicas_nombre
     lifecycleCallbacks: {  }

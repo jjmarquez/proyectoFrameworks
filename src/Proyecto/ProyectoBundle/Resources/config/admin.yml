@@ -3,7 +3,7 @@ services:
     sonata.admin.habitacion:
         class: Proyecto\ProyectoBundle\Admin\HabitacionAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Habitaciones", label: "Habitaciones" }
+            - { name: sonata.admin, manager_type: orm, group: "Hotel", label: "Habitaciones" }
         arguments:
             - ~
             -  Proyecto\ProyectoBundle\Entity\Habitacion
@@ -14,7 +14,7 @@ services:
     sonata.admin.precios:        
         class: Proyecto\ProyectoBundle\Admin\PreciosAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Precios Configurables", label: "Precios Configurables" }
+            - { name: sonata.admin, manager_type: orm, group: "Hotel", label: "Precios Configurables" }
         arguments:
             - ~
             -  Proyecto\ProyectoBundle\Entity\Configurables_precios
@@ -25,10 +25,21 @@ services:
     sonata.admin.bebidas:        
         class: Proyecto\ProyectoBundle\Admin\BebidasAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Cantidad de bebidas", label: "Bebidas" }
+            - { name: sonata.admin, manager_type: orm, group: "Hotel", label: "Bebidas" }
         arguments:
             - ~
             -  Proyecto\ProyectoBundle\Entity\bebidas
+            - ~
+        calls:
+            - [ setTranslationDomain, [ProyectoProyectoBundle]]
+          
+    sonata.admin.configbebidas:        
+        class: Proyecto\ProyectoBundle\Admin\ConfiguracionBebidasAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Hotel", label: "Configuracion de Bebidas" }
+        arguments:
+            - ~
+            -  Proyecto\ProyectoBundle\Entity\Config_bebidas
             - ~
         calls:
             - [ setTranslationDomain, [ProyectoProyectoBundle]]

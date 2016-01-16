@@ -7,10 +7,7 @@ namespace Proyecto\ProyectoBundle\Entity;
  */
 class Config_bebidas
 {
-    /**
-     * @var integer
-     */
-    private $id;
+
 
     /**
      * @var string
@@ -38,10 +35,6 @@ class Config_bebidas
      *
      * @return integer
      */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set categoria
@@ -124,7 +117,7 @@ class Config_bebidas
      */
     public function setAlcoholicasNombre($alcoholicasNmbre)
     {
-        $this->alcoholicasNmbre = $alcoholicasNmbre;
+        $this->alcoholicasNombre = $alcoholicasNmbre;
 
         return $this;
     }
@@ -136,6 +129,6 @@ class Config_bebidas
      */
     public function getAlcoholicasNombre()
     {
-        return $this->alcoholicasNmbre;
+        return $this->alcoholicasNombre;
     }
 }

@@ -41,7 +41,7 @@ class ConfiguracionBebidasAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('categoria')
+            ->addIdentifier('categoria')
             ->add("cervezaNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Habitacion' ))
             ->add("vinoNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Habitacion' ))
             ->add("alcoholicasNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Habitacion' ))    

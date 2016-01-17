@@ -48,7 +48,7 @@ class HabitacionAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('numero')
+            ->addIdentifier('numero')
             ->add('categoria')
             ->add('contNac')
             ->add('contInter')    

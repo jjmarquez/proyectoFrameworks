@@ -102,7 +102,7 @@ class Configurables_precios
     
         public function __toString() {
        if($this->tipo == 'Bebidas'){
-            return $this->nombre ;
+            return (string)$this->nombre ;
         }
         }
 }

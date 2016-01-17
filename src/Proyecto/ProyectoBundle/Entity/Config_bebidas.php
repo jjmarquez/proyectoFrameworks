@@ -20,21 +20,40 @@ class Config_bebidas
     private $cervezaNombre;
 
     /**
+     * @var integer
+     */
+    private $cantCerveza;
+            
+    /**
      * @var string
      */
     private $vinoNombre;
-
+    
+    /**
+     * @var integer
+     */
+    private $cantVino;
+    
     /**
      * @var string
      */
     private $alcoholicasNombre;
-
+    
+    /**
+     * @var integer
+     */
+    private $cantAlcohol;
+    
+     /**
+     * @var integer
+     */
+    private $cantRefresco;
 
     /**
-     * Get id
-     *
-     * @return integer
+     * @var integer
      */
+    private $cantAgua;
+
 
     /**
      * Set categoria
@@ -131,4 +150,126 @@ class Config_bebidas
     {
         return $this->alcoholicasNombre;
     }
+    
+    
+     /**
+     * Set cantCerveza
+     *
+     * @param integer $cantCerveza
+     *
+     * @return Config_bebidas
+     */
+    public function setCantCerveza($cantCerveza)
+    {
+        $this->cantCerveza = $cantCerveza;
+
+        return $this;
+    }
+
+    /**
+     * Get cantCerveza
+     *
+     * @return string
+     */
+    public function getCantCerveza()
+    {
+        return $this->cantCerveza;
+    }
+    
+    /**
+     * Set cantVino
+     *
+     * @param integer $cantVino
+     *
+     * @return Config_bebidas
+     */
+    public function setCantVino($cantVino)
+    {
+        $this->cantVino = $cantVino;
+
+        return $this;
+    }
+
+    /**
+     * Get cantVino
+     *
+     * @return string
+     */
+    public function getCantVino()
+    {
+        return $this->cantVino;
+    }
+    
+    /**
+     * Set cantAlcohol
+     *
+     * @param integer $cantAlcohol
+     *
+     * @return Config_bebidas
+     */
+    public function setCantAlcohol($cantAlcohol)
+    {
+        $this->cantAlcohol = $cantAlcohol;
+
+        return $this;
+    }
+
+    /**
+     * Get cantAlcohol
+     *
+     * @return string
+     */
+    public function getCantAlcohol()
+    {
+        return $this->cantAlcohol;
+    }
+    
+    /**
+     * Set cantRefresco
+     *
+     * @param integer $cantRefresco
+     *
+     * @return Config_bebidas
+     */
+    public function setCantRefresco($cantRefresco)
+    {
+        $this->cantRefresco = $cantRefresco;
+
+        return $this;
+    }
+    
+     /**
+     * Get cantRefresco
+     *
+     * @return string
+     */
+    public function getCantRefresco()
+    {
+        return $this->cantRefresco;
+    }
+
+    /**
+     * Get cantAgua
+     *
+     * @return string
+     */
+    public function getCantAgua()
+    {
+        return $this->cantAgua;
+    }
+    
+        /**
+     * Set cantAgua
+     *
+     * @param integer $cantAgua
+     *
+     * @return Config_bebidas
+     */
+    public function setCantAgua($cantAgua)
+    {
+        $this->cantAgua = $cantAgua;
+
+        return $this;
+    }
+
 }

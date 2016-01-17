@@ -12,12 +12,22 @@ Proyecto\ProyectoBundle\Entity\Config_bebidas:
             type: string
             length: '30'
             column: cerveza_nombre
+        cantCerveza:
+            type: integer
         vinoNombre:
             type: string
             length: '30'
             column: vino_nombre
+        cantVino:
+            type: integer
         alcoholicasNombre:
             type: string
             length: '30'
             column: alcoholicas_nombre
+        cantAlcohol:
+            type: integer
+        cantRefresco:
+            type: integer
+        cantAgua:
+            type: integer
     lifecycleCallbacks: {  }

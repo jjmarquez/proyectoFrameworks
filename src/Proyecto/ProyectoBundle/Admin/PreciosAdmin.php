@@ -30,6 +30,7 @@ class PreciosAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
+            ->add('id')
             ->add('nombre')
             ->add('tipo')
         ;
@@ -39,6 +40,7 @@ class PreciosAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->addIdentifier('id')
             ->add('nombre')
             ->add('tipo')
             ->add('valor')

@@ -21,9 +21,15 @@ class ConfiguracionBebidasAdmin extends Admin
                 'Alta'=>'Alta'
             )))
             ->add("cervezaNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Configurables_precios'))
+            ->add('cantCerveza')
             ->add("vinoNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Configurables_precios'))
-            ->add("alcoholicasNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Configurables_precios'))
-        ;
+            ->add('cantVino')
+                ->add("alcoholicasNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Configurables_precios'))
+            ->add('cantAlcohol')
+            ->add('cantRefresco')
+            ->add('cantAgua')
+            
+            ;
     }
 
     // Fields to be shown on filter forms
@@ -43,8 +49,13 @@ class ConfiguracionBebidasAdmin extends Admin
         $listMapper
             ->addIdentifier('categoria')
             ->add("cervezaNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Habitacion' ))
+            ->add('cantCerveza')
             ->add("vinoNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Habitacion' ))
+            ->add('cantVino')
             ->add("alcoholicasNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Habitacion' ))    
-        ;
+            ->add('cantAlcohol')
+            ->add('cantRefresco')
+            ->add('cantAgua')
+            ;
     }
 }

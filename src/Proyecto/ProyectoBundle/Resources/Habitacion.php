@@ -2,61 +2,65 @@
 
 namespace Proyecto\ProyectoBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Habitacion
- *
- * @ORM\Table(name="habitacion")
- * @ORM\Entity
  */
 class Habitacion
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="numero", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
      */
     private $numero;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="cont_nac", type="integer", nullable=false)
      */
-    private $contNac=0;
+    private $contNac;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="cont_inter", type="integer", nullable=false)
      */
-    private $contInter=0;
+    private $contInter;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="tipo", type="string", length=10, nullable=false)
      */
     private $tipo;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="categoria", type="string", length=8, nullable=false)
      */
     private $categoria;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="cama_ind", type="string", length=2, nullable=false)
+     * @var binary
      */
     private $camaInd;
 
-public function setNumero($numero)
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set numero
+     *
+     * @param integer $numero
+     *
+     * @return Habitacion
+     */
+    public function setNumero($numero)
     {
         $this->numero = $numero;
 
@@ -192,8 +196,4 @@ public function setNumero($numero)
     {
         return $this->camaInd;
     }
-    
-    public function __toString() {
-        return (string)$this->numero;
-    } }
-
+}

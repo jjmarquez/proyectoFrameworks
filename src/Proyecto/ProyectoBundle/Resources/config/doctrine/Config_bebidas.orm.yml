@@ -9,25 +9,25 @@ Proyecto\ProyectoBundle\Entity\Config_bebidas:
             id: true
     fields:
         cervezaNombre:
-            type: string
-            length: '30'
-            column: cerveza_nombre
+                type: string
+                length: '30'
+                column: cerveza_nombre
         cantCerveza:
-            type: integer
+                type: integer
         vinoNombre:
-            type: string
-            length: '30'
-            column: vino_nombre
+                type: string
+                length: '30'
+                column: vino_nombre
         cantVino:
-            type: integer
+                type: integer
         alcoholicasNombre:
-            type: string
-            length: '30'
-            column: alcoholicas_nombre
+                type: string
+                length: '30'
+                column: alcoholicas_nombre
         cantAlcohol:
-            type: integer
+                type: integer
         cantRefresco:
-            type: integer
+                type: integer
         cantAgua:
-            type: integer
-    lifecycleCallbacks: {  }
+                type: integer
+    lifecycleCallbacks: { }

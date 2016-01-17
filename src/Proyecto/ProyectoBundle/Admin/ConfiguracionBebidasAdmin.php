@@ -15,21 +15,20 @@ class ConfiguracionBebidasAdmin extends Admin
     {
         $formMapper
             ->add('categoria', 'choice', array(
-                'choices' => array(
-                'Normal'=>'Normal',
-                'Buisness'=>'Buisness',
-                'Alta'=>'Alta'
-            )))
-            ->add("cervezaNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Configurables_precios'))
-            ->add('cantCerveza')
-            ->add("vinoNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Configurables_precios'))
-            ->add('cantVino')
-                ->add("alcoholicasNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Configurables_precios'))
-            ->add('cantAlcohol')
-            ->add('cantRefresco')
-            ->add('cantAgua')
-            
-            ;
+                    'choices' => array(
+                    'Normal'=>'Normal',
+                    'Buisness'=>'Buisness',
+                    'Alta'=>'Alta'
+                    )))
+           ->add("cervezaNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Configurables_precios'))
+           ->add('cantCerveza')
+           ->add("vinoNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Configurables_precios'))
+           ->add('cantVino')
+           ->add("alcoholicasNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Configurables_precios'))
+           ->add('cantAlcohol')
+           ->add('cantRefresco')
+           ->add('cantAgua')
+        ;
     }
 
     // Fields to be shown on filter forms
@@ -52,10 +51,10 @@ class ConfiguracionBebidasAdmin extends Admin
             ->add('cantCerveza')
             ->add("vinoNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Habitacion' ))
             ->add('cantVino')
-            ->add("alcoholicasNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Habitacion' ))    
+            ->add("alcoholicasNombre",'entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Habitacion' ))
             ->add('cantAlcohol')
             ->add('cantRefresco')
             ->add('cantAgua')
-            ;
+       ;
     }
 }

@@ -8,10 +8,6 @@ namespace Proyecto\ProyectoBundle\Entity;
 class Configurables_precios
 {
     /**
-     * @var integer
-     */
-    private $id;
-    /**
      * @var float
      */
     private $valor;
@@ -32,10 +28,6 @@ class Configurables_precios
      *
      * @return integer
      */
-    public function getId(){
-        return $this->id;
-    }
-
     /**
      * Set valor
      *

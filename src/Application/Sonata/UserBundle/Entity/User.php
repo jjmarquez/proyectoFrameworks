@@ -26,9 +26,16 @@ class User extends BaseUser
     
     /**
      * @var integer $id
+     * @ORM\OneToMany(targetEntity="Proyecto\ProyectoBundle\Entity\Pide", mappedBy="usuario" , cascade={"remove"})
      */
     protected $id;
 
+        /**
+     * @var integer $enlace
+     * @ORM\OneToMany(targetEntity="Proyecto\ProyectoBundle\Entity\Pide", mappedBy="usuario" , cascade={"remove"})
+     */
+    protected $enlace;
+    
     /**
      * Get id
      *
@@ -38,4 +45,8 @@ class User extends BaseUser
     {
         return $this->id;
     }
+    
+        public function __toString() {
+        return (string)$this->id;
+    } 
 }

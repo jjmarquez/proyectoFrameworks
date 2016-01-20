@@ -26,7 +26,7 @@ class PideAdmin extends Admin
                     'Ocupar'=>'Ocupar',
                     )))
             ->add('habitacion','entity',array ('class'=> 'Proyecto\ProyectoBundle\Entity\Habitacion' ))
-            ->add('usuario')
+            ->add('usuario','entity',array ('class'=> 'Application\Sonata\UserBundle\Entity\User' ))
             
         ;
     }

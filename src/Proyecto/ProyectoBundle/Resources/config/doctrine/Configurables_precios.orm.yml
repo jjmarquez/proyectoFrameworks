@@ -3,11 +3,15 @@ Proyecto\ProyectoBundle\Entity\Configurables_precios:
     table: null
     repositoryClass: Proyecto\ProyectoBundle\Entity\Configurables_preciosRepository
     id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
         nombre:
             type: string
             length: '40'
-            id: true
-    fields:
         valor:
             type: float
         tipo:

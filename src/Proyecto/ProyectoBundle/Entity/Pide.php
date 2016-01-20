@@ -46,6 +46,7 @@ class Pide
      * @var integer
      *
      * @ORM\Column(name="usuario", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\UserBundle\Entity\User", inversedBy="id")
      */
     private $usuario;
 

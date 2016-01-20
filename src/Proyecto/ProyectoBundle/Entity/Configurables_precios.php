@@ -1,12 +1,14 @@
 <?php
 namespace Proyecto\ProyectoBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 /**
  * Configurables_precios
  */
 class Configurables_precios
 {
     /**
-     * @var float
+     * @var finteger
+     * @ORM\Id
      */
     private $id;
     /**

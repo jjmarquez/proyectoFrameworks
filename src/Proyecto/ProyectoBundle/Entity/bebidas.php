@@ -49,11 +49,10 @@ class bebidas
 
     /**
      * @var \Habitacion
-     *
+     *@ORM\Id
      * @ORM\ManyToOne(targetEntity="Habitacion")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="numero", referencedColumnName="numero")
-     * })
+     * @ORM\JoinColumn(name="numero", referencedColumnName="numero", onDelete="CASCADE")
+     * 
      */
     private $numero;
 

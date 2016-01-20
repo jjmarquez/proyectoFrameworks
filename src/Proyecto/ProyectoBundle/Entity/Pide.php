@@ -52,9 +52,9 @@ class Pide
     /**
      * @var \Habitacion
      *
-     * @ORM\ManyToOne(targetEntity="Habitacion")
+     * @ORM\ManyToOne(targetEntity="Habitacion", cascade={"remove"})
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="habitacion", referencedColumnName="numero")
+     *   @ORM\JoinColumn(name="habitacion", referencedColumnName="numero", onDelete="CASCADE")
      * })
      */
     private $habitacion;

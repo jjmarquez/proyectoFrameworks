@@ -15,6 +15,8 @@ class Habitacion
      * @ORM\Column(name="numero", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="bebidas", mappedBy="numero",cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="pide", mappedBy="habitacion",cascade={"remove"})
      */
     private $numero;
     /**

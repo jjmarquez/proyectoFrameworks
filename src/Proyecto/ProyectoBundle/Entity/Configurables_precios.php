@@ -1,7 +1,5 @@
 <?php
-
 namespace Proyecto\ProyectoBundle\Entity;
-
 /**
  * Configurables_precios
  */
@@ -10,24 +8,28 @@ class Configurables_precios
     /**
      * @var float
      */
+    private $id;
+    /**
+     * @var float
+     */
     private $valor;
-
     /**
      * @var string
      */
     private $tipo;
-
     /**
      * @var string
      */
     private $nombre;
-
-
     /**
      * Get id
      *
      * @return integer
      */
+        public function getId()
+    {
+        return $this->id;
+    }
     /**
      * Set valor
      *
@@ -38,10 +40,8 @@ class Configurables_precios
     public function setValor($valor)
     {
         $this->valor = $valor;
-
         return $this;
     }
-
     /**
      * Get valor
      *
@@ -51,7 +51,6 @@ class Configurables_precios
     {
         return $this->valor;
     }
-
     /**
      * Set tipo
      *
@@ -62,10 +61,8 @@ class Configurables_precios
     public function setTipo($tipo)
     {
         $this->tipo = $tipo;
-
         return $this;
     }
-
     /**
      * Get tipo
      *
@@ -75,7 +72,6 @@ class Configurables_precios
     {
         return $this->tipo;
     }
-
     /**
      * Set nombre
      *
@@ -86,10 +82,8 @@ class Configurables_precios
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
-
         return $this;
     }
-
     /**
      * Get nombre
      *
@@ -106,3 +100,4 @@ class Configurables_precios
         }
         }
 }
+

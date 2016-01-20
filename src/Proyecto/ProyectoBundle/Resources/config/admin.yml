@@ -25,7 +25,7 @@ services:
     sonata.admin.bebidas:        
         class: Proyecto\ProyectoBundle\Admin\BebidasAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Hotel", label: "Bebidas" }
+            - { name: sonata.admin, manager_type: orm, group: "Hotel", label: "Bebidas por habitacion" }
         arguments:
             - ~
             -  Proyecto\ProyectoBundle\Entity\bebidas

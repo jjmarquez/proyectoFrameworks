@@ -23,6 +23,7 @@ use Sonata\UserBundle\Entity\BaseUser as BaseUser;
  */
 class User extends BaseUser
 {
+    
     /**
      * @var integer $id
      */

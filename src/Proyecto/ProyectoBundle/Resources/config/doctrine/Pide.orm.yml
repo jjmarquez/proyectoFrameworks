@@ -18,4 +18,8 @@ Proyecto\ProyectoBundle\Entity\Pide:
         tipo:
             type: string
             length: '8'
+        habitacion:
+            type: integer
+        usuario:
+            type: integer
     lifecycleCallbacks: {  }

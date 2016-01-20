@@ -43,5 +43,15 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [ProyectoProyectoBundle]]
-                      
+            
+    sonata.admin.pide:        
+        class: Proyecto\ProyectoBundle\Admin\PideAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Hotel", label: "Petición" }
+        arguments:
+            - ~
+            -  Proyecto\ProyectoBundle\Entity\Pide
+            - ~
+        calls:
+            - [ setTranslationDomain, [ProyectoProyectoBundle]]                  
     

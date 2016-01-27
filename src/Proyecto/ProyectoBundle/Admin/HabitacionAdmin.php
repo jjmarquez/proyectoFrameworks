@@ -56,4 +56,6 @@ class HabitacionAdmin extends Admin
             ->add('camaInd')
         ;
     }
+    
+    
 }

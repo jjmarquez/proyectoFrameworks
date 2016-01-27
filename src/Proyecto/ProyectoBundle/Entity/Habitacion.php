@@ -171,4 +171,18 @@ public function setNumero($numero)
     
     public function __toString() {
         return (string)$this->numero;
-    } }
+    } 
+    
+   public function habitacionesLibres(){
+       
+        return  $this->getEntityManager()
+            ->createQuery(
+           'SELECT * FROM ProyectoProyectoBundle:Pide b
+            LEFT JOIN ProyectoProyectoBundle:Habiacion a
+            ON a.numero = b.habitacion'
+            )
+          ->getResult();
+
+        }
+    
+}

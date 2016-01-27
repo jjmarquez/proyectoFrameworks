@@ -53,5 +53,17 @@ services:
             -  Proyecto\ProyectoBundle\Entity\Pide
             - ~
         calls:
-            - [ setTranslationDomain, [ProyectoProyectoBundle]]                  
-    
+            - [ setTranslationDomain, [ProyectoProyectoBundle]]           
+                        
+             
+    sonata.admin.consultas:        
+        class: Proyecto\ProyectoBundle\Admin\ConsultasAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Hotel", label: "Consultas" }
+        arguments:
+            - ~
+            -  Proyecto\ProyectoBundle\Entity\Pide
+            - ~
+        calls:
+            - [ setTranslationDomain, [ProyectoProyectoBundle]]           
+                          

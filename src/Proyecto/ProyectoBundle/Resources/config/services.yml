@@ -2,3 +2,10 @@ services:
 #    proyecto_proyecto.example:
 #        class: Proyecto\ProyectoBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+ # common.listener.access:
+  #  class: Proyecto\ProyectoBundle\Listener\Access
+  #  arguments: [@router, @security.token_storage, @event_dispatcher, @logger]
+   # scope: request
+   # tags:
+   #     - { name: kernel.event_listener, event: security.interactive_login, method: onSecurityInteractiveLogin }

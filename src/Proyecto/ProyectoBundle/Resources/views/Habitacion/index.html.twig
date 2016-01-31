@@ -19,7 +19,7 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('habitacion_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('habitacion_show', { 'id': entity.numero }) }}">{{ entity.numero }}</a></td>
                 <td>{{ entity.numero }}</td>
                 <td>{{ entity.contNac }}</td>
                 <td>{{ entity.contInter }}</td>
@@ -29,10 +29,10 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('habitacion_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('habitacion_show', { 'id': entity.numero }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('habitacion_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('habitacion_edit', { 'id': entity.numero }) }}">edit</a>
                     </li>
                 </ul>
                 </td>

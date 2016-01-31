@@ -53,7 +53,7 @@ class HabitacionController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('habitacion_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('habitacion_show', array('id' => $entity->getNumero())));
         }
 
         return array(
@@ -161,7 +161,7 @@ class HabitacionController extends Controller
     private function createEditForm(Habitacion $entity)
     {
         $form = $this->createForm(new HabitacionType(), $entity, array(
-            'action' => $this->generateUrl('habitacion_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('habitacion_update', array('id' => $entity->getNumero())),
             'method' => 'PUT',
         ));
 

@@ -6,10 +6,6 @@
     <table class="record_properties">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
                 <th>Numero</th>
                 <td>{{ entity.numero }}</td>
             </tr>
@@ -43,7 +39,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ path('habitacion_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('habitacion_edit', { 'id': entity.numero }) }}">
             Edit
         </a>
     </li>

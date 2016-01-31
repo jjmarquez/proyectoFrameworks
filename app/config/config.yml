@@ -139,7 +139,6 @@ sonata_admin:
                     - sonata.admin.bebidas
                     - sonata.admin.configbebidas
                     - sonata.admin.precios
-                    - sonata.admin.consultas
                 roles: [ROLE_ADMIN]
                 
             User:

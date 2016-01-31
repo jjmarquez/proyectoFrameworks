@@ -2,12 +2,16 @@
 
 namespace Proyecto\ProyectoBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+	/**
+     * @Route("/", name="home")
+     */
+    public function indexAction()
     {
-        return $this->render('ProyectoProyectoBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('ProyectoProyectoBundle:Default:index.html.twig');
     }
 }

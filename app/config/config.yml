@@ -130,7 +130,7 @@ sonata_admin:
                 label: Funciones de Usuario
                 items:
                     - sonata.admin.pide
-                roles: [ROLE_USER]
+                roles: [ROLE_ADMIN]
 
             Admin:
                 label: Administracion
@@ -139,12 +139,12 @@ sonata_admin:
                     - sonata.admin.bebidas
                     - sonata.admin.configbebidas
                     - sonata.admin.precios
-                roles: [ROLE_ADMIN]
+                roles: [ROLE_SUPER_ADMIN]
                 
             User:
                 label: Usuarios
                 items:
                     - sonata.user.admin.user
                     - sonata.user.admin.group
-                roles: [ROLE_ADMIN]
+                roles: [ROLE_SUPER_ADMIN]
             

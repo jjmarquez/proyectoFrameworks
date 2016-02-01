@@ -12,7 +12,7 @@
 namespace Application\Sonata\UserBundle\Entity;
 
 use Sonata\UserBundle\Entity\BaseUser as BaseUser;
-
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -28,7 +28,6 @@ class User extends BaseUser
     
     /**
      * @var integer $id
-     * @ORM\OneToMany(targetEntity="Proyecto\ProyectoBundle\Entity\Pide", mappedBy="usuario" , cascade={"remove"})
      */
     protected $id;
     
@@ -44,5 +43,15 @@ class User extends BaseUser
     
         public function __toString() {
         return (string)$this->id;
+    }
+    /**
+     * @var array
+     * @ORM\OneToMany(targetEntity="Pide", mappedBy="usuario") */
+    protected $reservaciones;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->reservaciones = new ArrayCollection();
     } 
 }

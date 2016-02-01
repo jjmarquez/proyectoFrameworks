@@ -1,6 +1,9 @@
 <?php
 namespace Proyecto\ProyectoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * Habitacion
  *
@@ -16,7 +19,8 @@ class Habitacion
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\OneToMany(targetEntity="bebidas", mappedBy="numero",cascade={"remove"})
-     * @ORM\OneToMany(targetEntity="pide", mappedBy="habitacion",cascade={"remove"})
+     * ORM\OneToMany(targetEntity="pide", mappedBy="habitacion",cascade={"remove"})
+     * @Assert\NotBlank()
      */
     private $numero;
     /**
@@ -49,7 +53,17 @@ class Habitacion
      * @ORM\Column(name="cama_ind", type="string", length=2, nullable=false)
      */
     private $camaInd;
-public function setNumero($numero)
+
+    /**
+     * @var array
+     * @ORM\OneToMany(targetEntity="Pide", mappedBy="habitacion") */
+    protected $reservaciones;
+    
+    public function __construct()
+    {
+        $this->reservaciones = new ArrayCollection();
+    }
+    public function setNumero($numero)
     {
         $this->numero = $numero;
         return $this;
@@ -172,17 +186,38 @@ public function setNumero($numero)
     public function __toString() {
         return (string)$this->numero;
     } 
+    /**
+     * Get reservaciones
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getReservaciones()
+    {
+        return $this->reservaciones;
+    }   
     
-   public function habitacionesLibres(){
-       
-        return  $this->getEntityManager()
-            ->createQuery(
-           'SELECT * FROM ProyectoProyectoBundle:Pide b
-            LEFT JOIN ProyectoProyectoBundle:Habiacion a
-            ON a.numero = b.habitacion'
-            )
-          ->getResult();
 
-        }
-    
+    /**
+     * Add reservacione
+     *
+     * @param \Proyecto\ProyectoBundle\Entity\Pide $reservacione
+     *
+     * @return Habitacion
+     */
+    public function addReservacione(\Proyecto\ProyectoBundle\Entity\Pide $reservacione)
+    {
+        $this->reservaciones[] = $reservacione;
+
+        return $this;
+    }
+
+    /**
+     * Remove reservacione
+     *
+     * @param \Proyecto\ProyectoBundle\Entity\Pide $reservacione
+     */
+    public function removeReservacione(\Proyecto\ProyectoBundle\Entity\Pide $reservacione)
+    {
+        $this->reservaciones->removeElement($reservacione);
+    }
 }

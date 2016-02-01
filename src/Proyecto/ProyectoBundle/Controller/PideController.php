@@ -7,20 +7,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Proyecto\ProyectoBundle\Entity\Habitacion;
+use Proyecto\ProyectoBundle\Entity\Pide;
 
 /**
- * Habitacion controller.
+ * Pide controller.
  *
- * @Route("/habitacion")
+ * @Route("/pide")
  */
-class HabitacionController extends Controller
+class PideController extends Controller
 {
 
     /**
-     * Lists all Habitacion entities.
+     * Lists all Pide entities.
      *
-     * @Route("/", name="habitacion")
+     * @Route("/", name="pide")
      * @Method("GET")
      * @Template()
      */
@@ -28,7 +28,7 @@ class HabitacionController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('ProyectoProyectoBundle:Habitacion')->findAll();
+        $entities = $em->getRepository('ProyectoProyectoBundle:Pide')->findAll();
 
         return array(
             'entities' => $entities,
@@ -36,9 +36,9 @@ class HabitacionController extends Controller
     }
 
     /**
-     * Finds and displays a Habitacion entity.
+     * Finds and displays a Pide entity.
      *
-     * @Route("/{id}", name="habitacion_show")
+     * @Route("/{id}", name="pide_show")
      * @Method("GET")
      * @Template()
      */
@@ -46,10 +46,10 @@ class HabitacionController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ProyectoProyectoBundle:Habitacion')->find($id);
+        $entity = $em->getRepository('ProyectoProyectoBundle:Pide')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Habitacion entity.');
+            throw $this->createNotFoundException('Unable to find Pide entity.');
         }
 
         return array(

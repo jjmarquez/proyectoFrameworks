@@ -29,6 +29,21 @@
                 <th>Camaind</th>
                 <td>{{ entity.camaInd }}</td>
             </tr>
+            <tr>
+                <th>Reservaciones</th>
+                <td>{#{ entity.reservaciones }#}</td>
+            </tr>
+             <div class="col-md-6 col-md-12 form-group">
+                <label class="col-sm-3 col-xs-6 control-label">Creaciones</label> 
+                <div class="col-xs-12">
+                    {% if entity.reservaciones|length > 0 %}
+                        {% for iField in entity.reservaciones %} 
+                        <p class="form-control-static"><a href="{{ path('pide_show', { 'id': iField.codigo }) }}">{{ iField }}</a></p>{% endfor %}
+                    {% else %}
+                        <p class="form-control-static alert-warning">Este habitacion no posee reservaciones</p>
+                    {% endif %} 
+                </div>
+            </div>
         </tbody>
     </table>
 
@@ -38,11 +53,5 @@
             Back to the list
         </a>
     </li>
-    <li>
-        <a href="{{ path('habitacion_edit', { 'id': entity.numero }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
 </ul>
 {% endblock %}

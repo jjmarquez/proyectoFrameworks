@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Pide list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Finicio</th>
+                <th>Ffin</th>
+                <th>Tipo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('pide_show', { 'id': entity.codigo }) }}">{{ entity.codigo }}</a></td>
+                <td>{% if entity.fInicio %}{{ entity.fInicio|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.fFin %}{{ entity.fFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.tipo }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('pide_show', { 'id': entity.codigo }) }}">show</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}

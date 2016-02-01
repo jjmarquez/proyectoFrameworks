@@ -4,7 +4,7 @@ namespace Proyecto\ProyectoBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class HabitacionControllerTest extends WebTestCase
+class PideControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,8 +13,8 @@ class HabitacionControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Go to the list view
-        $crawler = $client->request('GET', '/habitacion/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /habitacion/");
+        $crawler = $client->request('GET', '/pide/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /pide/");
 
         // Go to the show view
         $crawler = $client->click($crawler->selectLink('show')->link());

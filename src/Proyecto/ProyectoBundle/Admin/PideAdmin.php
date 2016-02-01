@@ -15,10 +15,15 @@ class PideAdmin extends Admin
     {
         $formMapper
            ->add('fInicio', 'date', array(
-                'pattern' => 'dd MMM y G'
+                //'pattern' => 'dd MMM y G',
+                //'widget' => 'single_text',
+                'years' => range(date('Y'),date('Y')+3)
+
             ))
            ->add('fFin', 'date', array(
-                'pattern' => 'dd MMM y G'
+                'pattern' => 'dd MMM y G',
+                //'widget' => 'single_text',
+                'years' => range(date('Y'),date('Y')+3)
             ))
             ->add('tipo', 'choice', array(
                     'choices' => array(

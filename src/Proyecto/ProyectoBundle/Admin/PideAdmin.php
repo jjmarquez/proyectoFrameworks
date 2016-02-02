@@ -14,16 +14,11 @@ class PideAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-           ->add('fInicio', 'date', array(
-                //'pattern' => 'dd MMM y G',
-                //'widget' => 'single_text',
-                'years' => range(date('Y'),date('Y')+3)
-
+           ->add('fInicio', 'sonata_type_date_picker', array(
+                    'dp_use_current'        => false,
             ))
-           ->add('fFin', 'date', array(
-                'pattern' => 'dd MMM y G',
-                //'widget' => 'single_text',
-                'years' => range(date('Y'),date('Y')+3)
+           ->add('fFin', 'sonata_type_date_picker', array(
+                    'dp_use_current'        => false,
             ))
             ->add('tipo', 'choice', array(
                     'choices' => array(
@@ -41,9 +36,19 @@ class PideAdmin extends Admin
     {
         $datagridMapper
             ->add('codigo')
-            ->add('fInicio')
-            ->add('fFin')
-            ->add('tipo')
+            ->add('fInicio', 'doctrine_orm_date_range', array('label' => 'Fecha inicial de Reservacion',
+                'field_type' => 'sonata_type_date_range_picker',
+            ))
+            ->add('fFin', 'doctrine_orm_date_range', array('label' => 'Fecha final de Reservacion',
+                'field_type' => 'sonata_type_date_range_picker',
+            ))
+            ->add('tipo', 'doctrine_orm_choice', array('label' => 'Tipo',
+                    'field_options' => array(
+                        'required' => false,
+                        'choices' => array('Individual'=>'Individual','Doble'=>'Doble')
+                    ),
+                    'field_type' => 'choice'
+                ))
             ->add('habitacion')
             ->add('usuario')
         ;

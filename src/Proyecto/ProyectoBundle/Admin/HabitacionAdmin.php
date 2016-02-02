@@ -39,8 +39,20 @@ class HabitacionAdmin extends Admin
     {
         $datagridMapper
             ->add('numero')
-            ->add('categoria')
-            ->add('tipo')
+            ->add('categoria', 'doctrine_orm_choice', array('label' => 'Categoria',
+                    'field_options' => array(
+                        'required' => false,
+                        'choices' => array('Normal'=>'Normal','Buisness'=>'Buisness','Alta'=>'Alta')
+                    ),
+                    'field_type' => 'choice'
+                ))
+            ->add('tipo', 'doctrine_orm_choice', array('label' => 'Tipo',
+                    'field_options' => array(
+                        'required' => false,
+                        'choices' => array('Individual'=>'Individual','Doble'=>'Doble')
+                    ),
+                    'field_type' => 'choice'
+                ))
         ;
     }
 

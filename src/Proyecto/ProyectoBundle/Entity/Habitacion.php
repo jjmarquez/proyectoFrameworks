@@ -220,4 +220,28 @@ class Habitacion
     {
         $this->reservaciones->removeElement($reservacione);
     }
+    /**
+     * esta disponible para
+     *
+     * @param \DateTime $start \DateTime $end
+     *
+     * @return boolean
+     */
+    public function isDisponibleFor(Date $start=null, Date $end=null )
+    {
+        $band = false;
+        if ($start === null || $end === $end) {
+            return $band;
+        }
+        foreach ($this->reservaciones as $anterior) {
+            $band =(
+                ($anterior->getFInicio() <= $start && $start <= $anterior->getFFin()) ||
+                ($anterior->getFInicio() <= $end && $end <= $anterior->getFFin()) 
+            );
+            if($band){
+                break;
+            }
+        }
+        return $band;
+    }
 }

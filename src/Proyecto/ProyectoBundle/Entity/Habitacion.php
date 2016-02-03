@@ -12,6 +12,16 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Habitacion
 {
+    private static $tipos = array('Individual'=>'Individual','Doble'=>'Doble');
+
+    public static function getTipos() {
+        return self::$tipos;
+    }
+    private static $categorias = array('Normal'=>'Normal','Buisness'=>'Buisness','Alta'=>'Alta');
+
+    public static function getCategorias() {
+        return self::$categorias;
+    }
     /**
      * @var integer
      *
@@ -227,21 +237,28 @@ class Habitacion
      *
      * @return boolean
      */
-    public function isDisponibleFor(Date $start=null, Date $end=null )
+    public function isDisponibleFor($start, $end)
     {
         $band = false;
-        if ($start === null || $end === $end) {
-            return $band;
-        }
-        foreach ($this->reservaciones as $anterior) {
-            $band =(
-                ($anterior->getFInicio() <= $start && $start <= $anterior->getFFin()) ||
-                ($anterior->getFInicio() <= $end && $end <= $anterior->getFFin()) 
-            );
-            if($band){
-                break;
+
+        //Si la Habitacion tiene al menos una reservacion, se valida
+        if (count($this->getReservaciones()) > 0) {
+            //Se obtienen las reservaciones de la habitacion
+            $reservacionesAnteriores = $this->getReservaciones();
+            
+            $band = false;
+            
+            foreach ($reservacionesAnteriores as $anterior) {
+                $band =(
+                    ($anterior->getFInicio() >= $start && $end >= $anterior->getFFin()) ||
+                    ($anterior->getFInicio() <= $start && $start <= $anterior->getFFin()) ||
+                    ($anterior->getFInicio() <= $end && $end <= $anterior->getFFin()) 
+                );
+                if($band){
+                    break;
+                }
             }
         }
-        return $band;
+        return !$band;
     }
 }

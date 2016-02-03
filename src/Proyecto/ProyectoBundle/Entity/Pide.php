@@ -169,6 +169,7 @@ class Pide
             
             foreach ($reservacionesAnteriores as $anterior) {
                 $band =(
+                    ($anterior->getFInicio() >= $this->fInicio && $this->fFin >= $anterior->getFFin()) ||
                     ($anterior->getFInicio() <= $this->fInicio && $this->fInicio <= $anterior->getFFin()) ||
                     ($anterior->getFInicio() <= $this->fFin && $this->fFin <= $anterior->getFFin()) 
                 );
@@ -176,25 +177,11 @@ class Pide
                     break;
                 }
             }
-            $reservacionesAnterior = $this->getHabitacion()->getReservaciones()->last();
-
-            //Se obtiene la finalizacion de la reservacion anterior
-            $fechaFinalAnterior = $reservacionesAnterior->getFFin();
             
             // Se verifica si la reservacion anterior ya se concreto
             if ($band) {
                 
-                $context->buildViolation(
-                    'Fecha final de reserva anterior: '.
-                    $fechaFinalAnterior->format('Y-m-d').
-                    ' '.
-                    'Fecha inicial de reserva actual: '.
-                    $this->fInicio->format('Y-m-d').
-                    ' '.
-                    $fechaFinalAnterior->diff($this->fInicio)->format('Y-m-d').
-                    ' <'.
-                    ($fechaFinalAnterior >= $this->fInicio).
-                    '> Esta habitación NO esta disponible para la fecha indicada!')
+                $context->buildViolation('Esta habitación NO esta disponible para la fecha indicada!')
                     ->atPath('habitacion')
                     ->addViolation();
             }

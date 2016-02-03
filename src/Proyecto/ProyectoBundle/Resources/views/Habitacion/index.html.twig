@@ -1,36 +1,52 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Habitacion list</h1>
+{% if form is defined %}
 
-    <table class="records_list">
+<div class="container">
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+            
+            <div class="form-group col-xs-5 col-md-4 col-lg-2" style="padding-right: 0px;">
+               {{ form_widget(form.tipo) }}
+            </div>
+            <div class="form-group col-xs-5 col-md-4 col-lg-2" style="padding-right: 0px;">
+               {{ form_widget(form.categoria) }}
+            </div>
+            <div class="form-group col-xs-6 col-md-5 col-lg-3 input-group" >
+                <span class="input-group-addon"><i class="fa fa-calendar"></i>Desde</span>
+                {{ form_widget(form.desde) }}
+                <span class="input-group-addon">hasta</span>
+                {{ form_widget(form.hasta) }}
+            </div>
+            <div class="form-group col-md-1" style="width:initial;padding-left: 0px;padding-right: 0px;">
+                {{ form_widget(form.submit) }}{{ form_widget(form._token) }}    
+            </div>    
+    {{ form_rest(form) }}
+    {{ form_end(form, {'render_rest': false}) }}
+</div>
+{% endif %} 
+    <h3>Resultados</h3>
+    {% if entities |length == 0 %}
+        <h5>Lo sentimos, no tenemos disponibles de ese tipo y categoria para el rango de fechas indicado</h5>
+    {% endif %}
+
+    <table class="table table-striped" style="background-color: rgba(255, 255, 255, 0.6);">
         <thead>
             <tr>
-                <th>Numero</th>
-                <th>Contnac</th>
-                <th>Continter</th>
+                <th>Numero</th>       
                 <th>Tipo</th>
                 <th>Categoria</th>
-                <th>Camaind</th>
-                <th>Actions</th>
+                <th>¿Cama individual?</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('habitacion_show', { 'id': entity.numero }) }}">{{ entity.numero }}</a></td>
-                <td>{{ entity.contNac }}</td>
-                <td>{{ entity.contInter }}</td>
                 <td>{{ entity.tipo }}</td>
                 <td>{{ entity.categoria }}</td>
                 <td>{{ entity.camaInd }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('habitacion_show', { 'id': entity.numero }) }}">show</a>
-                    </li>
-                </ul>
-                </td>
             </tr>
         {% endfor %}
         </tbody>

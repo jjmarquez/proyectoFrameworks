@@ -111,7 +111,7 @@ swiftmailer:
     spool:     { type: memory }
 
 sonata_admin:
-    title:       Sistema X
+    title:       Hotel Paradise
     title_logo:  /escudo.svg
     dashboard:
         blocks:
